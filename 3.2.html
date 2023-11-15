@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Навігація</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #66bcea; /* Додайте кольорове значення за своїм вибором */
+            background-image: url('background.jpg'); /* Додайте URL свого фонового зображення */
+            background-size: cover;
+        }
+        #parentDiv {
+            margin: 0 auto;
+            width: 1000px;
+            border: 10px solid #03882b;
+            padding: 50px;
+            background-color: #96f566;
+        }
+        p, ul, li {
+            color: #333;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="parentDiv">
+        <p>Це батьківський <p> город</p>
+        <ul>
+            <li>Дочірній елемент списку 1</li>
+            <li>Дочірній елемент списку 2</li>
+            <li>Дочірній елемент списку 3</li>
+        </ul>
+    </div>
+
+    <script>
+        // Завдання 1: Отримуємо батьківський елемент <div> для <ul>
+        var ulElement = document.querySelector("ul");
+        var parentDiv = ulElement.parentElement;
+        console.log("Батьківський елемент для <ul>:", parentDiv);
+
+        // Завдання 2: Отримуємо список всіх дочірніх елементів <ul> та змінюємо їх текст
+        var childElements = ulElement.children;
+        for (var i = 0; i < childElements.length; i++) {
+            childElements[i].textContent = "гарбуз " + (i + 1);
+        }
+
+        // Завдання 3: Змінюємо текст батьківського <div> елементу
+        parentDiv.querySelector("p").textContent = "диня.";
+    </script>
+</body>
+</html>
